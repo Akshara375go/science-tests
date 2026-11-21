@@ -2089,6 +2089,28 @@ function openChapter(n){
 document.querySelectorAll('a.chapter.live').forEach(a => {
   a.addEventListener('click', e => { e.preventDefault(); openChapter(+a.dataset.chapter); });
 });
+// ---- extra chapters: each day's small file (chapter5.js, chapter6.js ...) registers itself here
+window.registerChapter = function(n, ch){
+  CHAPTERS[n] = ch;
+  const card = document.querySelector('.chapter[data-chapter="' + n + '"]');
+  if(!card || card.classList.contains('live')) return;
+  const a = document.createElement('a');
+  a.className = 'chapter live'; a.href = '#'; a.dataset.chapter = n;
+  a.innerHTML = card.innerHTML;
+  a.querySelector('.pill').textContent = 'Start quiz · ' + ch.questions.length + ' questions';
+  a.addEventListener('click', e => { e.preventDefault(); openChapter(n); });
+  card.replaceWith(a);
+};
+(function(){
+  const stamp = Math.floor(Date.now() / 60000);
+  for(let n = 1; n <= 13; n++){
+    if(CHAPTERS[n]) continue;
+    const s = document.createElement('script');
+    s.src = 'chapter' + n + '.js?v=' + stamp;
+    s.onerror = function(){ s.remove(); };
+    document.body.appendChild(s);
+  }
+})();
 document.getElementById('backBtnQuiz').addEventListener('click', showHome);
 document.getElementById('backBtnResults').addEventListener('click', showHome);
 </script>
