@@ -161,6 +161,59 @@
   a.classcard:hover{border-color:var(--gold-dim);}
   a.classcard .pill{border-color:var(--gold-dim);color:var(--gold);}
   .note{margin:14px 0 0;color:var(--ink-dim);font-size:13px;line-height:1.55;text-align:center;}
+
+  .nav-row{display:flex;gap:8px;margin-top:18px;}
+  .nav-btn{flex:1;padding:11px 6px;background:transparent;border:1px solid var(--line);color:var(--ink);font-family:'Work Sans',sans-serif;font-weight:600;font-size:14px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.25;}
+  .nav-btn .kn-s{font-size:11.5px;font-weight:400;color:var(--ink-dim);}
+  .nav-btn:hover:not(:disabled){border-color:var(--gold-dim);}
+  .nav-btn:disabled{opacity:.35;cursor:default;}
+  .nav-btn.primary{background:var(--gold);border-color:var(--gold);color:#1A1400;}
+  .nav-btn.primary .kn-s{color:#3a2d00;}
+  .nav-btn.primary:disabled{background:transparent;border-color:var(--line);color:var(--ink);}
+  .jump-panel{margin-top:16px;padding:14px 14px 12px;border:1px solid var(--line);background:var(--paper-raised);}
+  .jump-title{font-family:'Fraunces',serif;font-weight:600;font-size:14px;color:var(--ink-dim);margin-bottom:10px;}
+  .jump-grid{display:flex;flex-wrap:wrap;gap:7px;}
+  .jump-btn{width:38px;height:36px;border:1px solid var(--line);background:transparent;color:var(--ink);font-family:'Work Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;font-variant-numeric:tabular-nums;}
+  .jump-btn.ok{background:var(--green-bg);border-color:var(--green);color:var(--green);}
+  .jump-btn.bad{background:var(--red-bg);border-color:var(--red);color:var(--red);}
+  .jump-btn.cur{outline:2px solid var(--gold);outline-offset:1px;}
+  .jump-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:11.5px;color:var(--ink-dim);}
+  .jump-legend .lg{display:inline-block;width:10px;height:10px;margin-right:5px;border:1px solid var(--line);vertical-align:-1px;}
+  .lg-ok{background:var(--green-bg);border-color:var(--green)!important;}
+  .lg-bad{background:var(--red-bg);border-color:var(--red)!important;}
+  .submit-btn{margin-top:16px;width:100%;padding:14px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Work Sans',sans-serif;font-weight:700;font-size:15px;cursor:pointer;}
+  .submit-btn:active{background:rgba(232,185,59,.1);}
+  .submit-btn .sub-count{display:block;font-weight:400;font-size:12px;color:var(--ink-dim);margin-top:3px;}
+  .modal{position:fixed;inset:0;background:rgba(5,8,20,.78);display:none;align-items:center;justify-content:center;padding:20px;z-index:50;}
+  .modal.show{display:flex;}
+  .modal-box{background:var(--paper-raised);border:1px solid var(--gold-dim);padding:22px 20px;max-width:380px;width:100%;}
+  .modal-box p{margin:0 0 16px;font-size:14.5px;line-height:1.6;white-space:pre-line;}
+  .modal-row{display:flex;gap:10px;}
+  .stat-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px;}
+  .stat{border:1px solid var(--line);padding:6px 12px;font-size:12.5px;color:var(--ink-dim);}
+  .stat b{color:var(--ink);font-variant-numeric:tabular-nums;}
+  .stat.ok b{color:var(--green);} .stat.bad b{color:var(--red);}
+  .pdf-btn{margin-top:22px;width:100%;padding:14px;background:var(--gold);color:#1A1400;border:none;font-family:'Work Sans',sans-serif;font-weight:700;font-size:15px;cursor:pointer;}
+  .pdf-note{margin:8px 0 0;font-size:12px;color:var(--ink-dim);line-height:1.55;text-align:center;}
+  .review-item .a-skip{color:var(--gold);}
+  #printArea{display:none;}
+  @media print{
+    @page{margin:14mm 12mm;}
+    html,body{background:#fff!important;color:#000!important;}
+    .wrap,.modal{display:none!important;}
+    #printArea{display:block!important;font-family:'Work Sans','Noto Sans Kannada',Arial,sans-serif;color:#000;font-size:11.5pt;line-height:1.5;}
+    #printArea h1{font-size:16pt;margin:0 0 4px;}
+    #printArea .p-sub{font-size:10.5pt;color:#333;margin:0 0 3px;}
+    #printArea .p-score{font-size:12pt;font-weight:700;margin:8px 0 14px;padding:6px 0;border-top:1px solid #999;border-bottom:1px solid #999;}
+    #printArea .pq{break-inside:avoid;page-break-inside:avoid;margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid #ccc;}
+    #printArea .pq .qn{font-weight:700;white-space:pre-line;margin-bottom:5px;}
+    #printArea .pq .po{margin:2px 0 2px 12px;white-space:pre-line;}
+    #printArea .pq .po.right{font-weight:700;}
+    #printArea .pq .po.mine{text-decoration:underline;}
+    #printArea .pq .st{font-weight:700;margin:5px 0 3px;}
+    #printArea .pq .ex{white-space:pre-line;margin-top:4px;padding:5px 8px;background:#f1f1f1;}
+    #printArea .p-foot{margin-top:12px;font-size:10pt;color:#333;}
+  }
   .intro{margin:6px 0 0;text-align:center;color:var(--ink-dim);font-size:13.5px;line-height:1.55;}
   .back-btn{background:transparent;border:none;color:var(--gold);font-family:'Work Sans',sans-serif;font-weight:600;font-size:13.5px;cursor:pointer;padding:0 0 14px;}
   .back-btn-wide{margin-top:12px;width:100%;padding:13px;background:transparent;border:1px solid var(--line);color:var(--ink);font-family:'Work Sans',sans-serif;font-weight:600;font-size:15px;cursor:pointer;}
@@ -258,7 +311,26 @@
         <div class="verdict" id="verdictText"></div>
         <div id="explainText"></div>
       </div>
-      <button class="next-btn" id="nextBtn">Next question</button>
+      <div class="nav-row">
+        <button class="nav-btn" id="prevBtn">← Previous<span class="kn-s">ಹಿಂದೆ</span></button>
+        <button class="nav-btn" id="skipBtn">Skip<span class="kn-s">ಬಿಟ್ಟು ಮುಂದೆ</span></button>
+        <button class="nav-btn primary" id="nextBtn">Next →<span class="kn-s">ಮುಂದೆ</span></button>
+      </div>
+    </div>
+    <div class="jump-panel">
+      <div class="jump-title">Jump to a question · ಪ್ರಶ್ನೆಗೆ ಹೋಗಿ</div>
+      <div class="jump-grid" id="jumpGrid"></div>
+      <div class="jump-legend"><span><i class="lg lg-ok"></i>Correct</span><span><i class="lg lg-bad"></i>Wrong</span><span><i class="lg lg-un"></i>Not answered</span></div>
+    </div>
+    <button class="submit-btn" id="submitBtn">Submit test · ಪರೀಕ್ಷೆ ಸಲ್ಲಿಸಿ<span class="sub-count" id="ansCount"></span></button>
+    <div class="modal" id="confirmModal">
+      <div class="modal-box">
+        <p id="confirmText"></p>
+        <div class="modal-row">
+          <button class="nav-btn" id="confirmNo">Go back · ಹಿಂದೆ</button>
+          <button class="nav-btn primary" id="confirmYes">Submit · ಸಲ್ಲಿಸಿ</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -266,6 +338,7 @@
     <div class="score-block">
       <div class="score-num" id="scoreNum">0</div>
       <div class="score-out" id="scoreOut">out of N correct</div>
+      <div class="stat-row" id="statRow"></div>
       <div class="score-msg" id="scoreMsg"></div>
       <div class="topic-breakdown" id="topicBreakdown">
         <h3>Topic-wise breakdown</h3>
@@ -273,6 +346,8 @@
       </div>
     </div>
     <div class="review-list" id="reviewList"></div>
+    <button class="pdf-btn" id="pdfBtn">Download explanations as PDF · ವಿವರಣೆ PDF ಡೌನ್‌ಲೋಡ್</button>
+    <p class="pdf-note">In the window that opens, choose “Save as PDF”. If nothing opens inside Telegram, open this page in Chrome. · ತೆರೆಯುವ ವಿಂಡೋದಲ್ಲಿ “Save as PDF” ಆಯ್ಕೆಮಾಡಿ. ಟೆಲಿಗ್ರಾಮ್‌ನಲ್ಲಿ ತೆರೆಯದಿದ್ದರೆ Chrome ನಲ್ಲಿ ತೆರೆಯಿರಿ.</p>
     <button class="restart-btn" id="restartBtn">Retake (shuffled) · ಮರುಪ್ರಯತ್ನ</button>
     <button class="back-btn-wide" id="backBtnResults">← All chapters · ಎಲ್ಲಾ ಅಧ್ಯಾಯಗಳು</button>
     <div class="footer-link">
@@ -1993,81 +2068,162 @@ const progressFill = document.getElementById('progressFill');
 const progressLabel = document.getElementById('progressLabel');
 const letters = ['A','B','C','D'];
 
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+const prevBtn = document.getElementById('prevBtn');
+const skipBtn = document.getElementById('skipBtn');
+const submitBtn = document.getElementById('submitBtn');
+const jumpGrid = document.getElementById('jumpGrid');
+const confirmModal = document.getElementById('confirmModal');
+let answers = [];
+
 function startQuiz(){
   order = shuffle([...Array(BANK.length).keys()]);
+  answers = new Array(BANK.length).fill(null);
   current = 0; score = 0; wrongAnswers = []; topicStats = {};
   resultsScreen.className = 'results';
   quizScreen.style.display = 'block';
+  confirmModal.className = 'modal';
   document.getElementById('mastheadSub').textContent = `${chapterLabel(currentChapter)} · ${BANK.length} questions · shuffled`;
+  buildJump();
   renderQuestion();
 }
 
+function buildJump(){
+  jumpGrid.innerHTML = '';
+  for(let i = 0; i < BANK.length; i++){
+    const b = document.createElement('button');
+    b.className = 'jump-btn';
+    b.textContent = i + 1;
+    b.setAttribute('aria-label', 'Go to question ' + (i + 1));
+    b.addEventListener('click', () => goTo(i));
+    jumpGrid.appendChild(b);
+  }
+}
+
+function updateJump(){
+  const btns = jumpGrid.querySelectorAll('.jump-btn');
+  let done = 0;
+  btns.forEach((b, i) => {
+    let c = 'jump-btn';
+    const a = answers[i];
+    if(a !== null){ done++; c += (a === BANK[order[i]].correct) ? ' ok' : ' bad'; }
+    if(i === current) c += ' cur';
+    b.className = c;
+  });
+  document.getElementById('ansCount').textContent = `${done} / ${BANK.length} answered · ಉತ್ತರಿಸಿದ್ದು`;
+  progressFill.style.width = `${(done / BANK.length) * 100}%`;
+  progressLabel.textContent = `Q ${current + 1} / ${BANK.length}`;
+}
+
+function goTo(i){
+  if(i < 0 || i >= BANK.length) return;
+  current = i;
+  renderQuestion();
+  window.scrollTo(0, 0);
+}
+
 function renderQuestion(){
-  answered = false;
   const idx = order[current];
   const item = BANK[idx];
-  topicTag.textContent = item.topic;
+  const chosen = answers[current];
+  answered = chosen !== null;
+  topicTag.textContent = `Q${current + 1} · ${item.topic}`;
   questionText.textContent = item.q;
   optionsWrap.innerHTML = '';
   feedback.className = 'feedback';
-  nextBtn.className = 'next-btn';
 
   item.options.forEach((opt, i) => {
     const b = document.createElement('button');
     b.className = 'option';
-    b.innerHTML = `<span class="letter">${letters[i]}</span><span>${opt}</span>`;
-    b.addEventListener('click', () => selectOption(i, item, b));
+    const l = document.createElement('span'); l.className = 'letter'; l.textContent = letters[i];
+    const s = document.createElement('span'); s.textContent = opt;
+    b.appendChild(l); b.appendChild(s);
+    if(answered){
+      b.disabled = true;
+      if(i === item.correct) b.classList.add('correct');
+      else if(i === chosen) b.classList.add('incorrect');
+      else b.classList.add('faded');
+    } else {
+      b.addEventListener('click', () => selectOption(i));
+    }
     optionsWrap.appendChild(b);
   });
 
-  progressFill.style.width = `${(current/BANK.length)*100}%`;
-  progressLabel.textContent = `${current+1} / ${BANK.length}`;
+  if(answered) showFeedback(item, chosen);
+  prevBtn.disabled = current === 0;
+  nextBtn.disabled = current === BANK.length - 1;
+  skipBtn.style.display = answered ? 'none' : 'flex';
+  updateJump();
 }
 
-function selectOption(i, item, btn){
-  if(answered) return;
-  answered = true;
-  const allOptions = optionsWrap.querySelectorAll('.option');
-  const isCorrect = i === item.correct;
-
-  allOptions.forEach((el, idx2) => {
-    el.disabled = true;
-    if(idx2 === item.correct) el.classList.add('correct');
-    else if(idx2 === i) el.classList.add('incorrect');
-    else el.classList.add('faded');
-  });
-
-  if(!topicStats[item.topic]) topicStats[item.topic] = {correct:0,total:0};
-  topicStats[item.topic].total++;
-
-  if(isCorrect){
-    score++;
-    topicStats[item.topic].correct++;
+function showFeedback(item, chosen){
+  if(chosen === item.correct){
     feedback.className = 'feedback show correct-fb';
     verdictText.textContent = 'Correct! / ಸರಿಯಾಗಿದೆ!';
   } else {
-    wrongAnswers.push({q:item.q, chosen:item.options[i], right:item.options[item.correct], explain:item.explain});
     feedback.className = 'feedback show incorrect-fb';
     verdictText.textContent = `Not quite / ತಪ್ಪು — correct answer / ಸರಿಯಾದ ಉತ್ತರ: ${item.options[item.correct]}`;
   }
   explainText.textContent = item.explain;
-  nextBtn.className = 'next-btn show';
-  nextBtn.textContent = current === BANK.length - 1 ? 'See results · ಫಲಿತಾಂಶ' : 'Next question · ಮುಂದಿನ ಪ್ರಶ್ನೆ';
 }
 
-nextBtn.addEventListener('click', () => {
-  current++;
-  if(current >= BANK.length) showResults();
-  else renderQuestion();
+function selectOption(i){
+  if(answers[current] !== null) return;
+  answers[current] = i;
+  renderQuestion();
+}
+
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+skipBtn.addEventListener('click', () => {
+  const n = BANK.length;
+  for(let k = 1; k <= n; k++){
+    const j = (current + k) % n;
+    if(answers[j] === null && j !== current){ goTo(j); return; }
+  }
+  goTo(Math.min(current + 1, n - 1));
 });
 
-function showResults(){
+submitBtn.addEventListener('click', () => {
+  const un = answers.filter(a => a === null).length;
+  if(un === 0){ finishTest(); return; }
+  document.getElementById('confirmText').textContent =
+    `You have ${un} unanswered question${un > 1 ? 's' : ''}. Submit anyway?\n${un} ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿಲ್ಲ. ಆದರೂ ಸಲ್ಲಿಸುವಿರಾ?`;
+  confirmModal.className = 'modal show';
+});
+document.getElementById('confirmNo').addEventListener('click', () => { confirmModal.className = 'modal'; });
+document.getElementById('confirmYes').addEventListener('click', () => { confirmModal.className = 'modal'; finishTest(); });
+
+function finishTest(){
+  score = 0; wrongAnswers = []; topicStats = {};
+  let skipped = 0, wrong = 0;
+  BANK.forEach(it => { if(!topicStats[it.topic]) topicStats[it.topic] = {correct:0,total:0}; });
+  for(let i = 0; i < BANK.length; i++){
+    const item = BANK[order[i]];
+    const a = answers[i];
+    topicStats[item.topic].total++;
+    if(a === null){
+      skipped++;
+      wrongAnswers.push({q:item.q, chosen:null, right:item.options[item.correct], explain:item.explain, n:i + 1});
+    } else if(a === item.correct){
+      score++; topicStats[item.topic].correct++;
+    } else {
+      wrong++;
+      wrongAnswers.push({q:item.q, chosen:item.options[a], right:item.options[item.correct], explain:item.explain, n:i + 1});
+    }
+  }
+  showResults(skipped, wrong);
+}
+
+function showResults(skipped, wrong){
   quizScreen.style.display = 'none';
   resultsScreen.className = 'results show';
   document.getElementById('mastheadSub').textContent = 'Quiz complete';
 
   document.getElementById('scoreNum').textContent = score;
   document.getElementById('scoreOut').textContent = `out of ${BANK.length} correct`;
+  document.getElementById('statRow').innerHTML =
+    `<span class="stat ok">Correct <b>${score}</b></span><span class="stat bad">Wrong <b>${wrong}</b></span><span class="stat">Skipped <b>${skipped}</b></span>`;
 
   const pct = Math.round((score/BANK.length)*100);
   let msg;
@@ -2079,12 +2235,12 @@ function showResults(){
 
   const topicRows = document.getElementById('topicRows');
   topicRows.innerHTML = '';
-  Object.keys(topicStats).forEach(t => {
-    const s = topicStats[t];
+  Object.keys(topicStats).forEach(tp => {
+    const s = topicStats[tp];
     const row = document.createElement('div');
     row.className = 'topic-row';
     const cls = s.correct === s.total ? 'strong' : (s.correct === 0 ? 'weak' : '');
-    row.innerHTML = `<span>${t}</span><span class="count ${cls}">${s.correct}/${s.total}</span>`;
+    row.innerHTML = `<span>${esc(tp)}</span><span class="count ${cls}">${s.correct}/${s.total}</span>`;
     topicRows.appendChild(row);
   });
 
@@ -2096,19 +2252,64 @@ function showResults(){
     heading.style.fontSize = '15px';
     heading.style.color = 'var(--ink-dim)';
     heading.style.marginBottom = '10px';
-    heading.textContent = `Review — ${wrongAnswers.length} to revisit`;
+    heading.textContent = `Review — ${wrongAnswers.length} to revisit · ಮರುಪರಿಶೀಲಿಸಿ`;
     reviewList.appendChild(heading);
     wrongAnswers.forEach(w => {
       const div = document.createElement('div');
       div.className = 'review-item';
-      div.innerHTML = `<div class="q">${w.q}</div>
-        <div class="a-wrong">Your answer / ನಿಮ್ಮ ಉತ್ತರ: ${w.chosen}</div>
-        <div class="a-right">Correct / ಸರಿ: ${w.right}</div>
-        <div style="margin-top:6px;color:var(--ink-dim);white-space:pre-line;">${w.explain}</div>`;
+      const mine = w.chosen === null
+        ? `<div class="a-skip">Not answered / ಉತ್ತರಿಸಿಲ್ಲ</div>`
+        : `<div class="a-wrong">Your answer / ನಿಮ್ಮ ಉತ್ತರ: ${esc(w.chosen)}</div>`;
+      div.innerHTML = `<div class="q">Q${w.n}. ${esc(w.q)}</div>${mine}
+        <div class="a-right">Correct / ಸರಿ: ${esc(w.right)}</div>
+        <div style="margin-top:6px;color:var(--ink-dim);white-space:pre-line;">${esc(w.explain)}</div>`;
       reviewList.appendChild(div);
     });
   }
+  window.scrollTo(0, 0);
 }
+
+// ---- PDF of explanations (browser print -> Save as PDF)
+function buildPrintArea(){
+  let pa = document.getElementById('printArea');
+  if(!pa){ pa = document.createElement('div'); pa.id = 'printArea'; document.body.appendChild(pa); }
+  const info = chapterLabel(currentChapter);
+  const ch = CHAPTERS[currentChapter] || {};
+  let h = `<h1>Karnataka e-Exam Test Series</h1>
+    <p class="p-sub">${esc(info)}${ch.title ? ' — ' + esc(ch.title) : ''} · General Science</p>
+    <p class="p-sub">Telegram: t.me/karnatakaeExamseries</p>
+    <div class="p-score">Score: ${score} / ${BANK.length} &nbsp;·&nbsp; ಅಂಕ: ${score} / ${BANK.length}</div>`;
+  for(let i = 0; i < BANK.length; i++){
+    const item = BANK[order[i]];
+    const a = answers[i];
+    let st;
+    if(a === null) st = 'Not answered · ಉತ್ತರಿಸಿಲ್ಲ';
+    else if(a === item.correct) st = '✔ Correct · ಸರಿ';
+    else st = '✘ Wrong · ತಪ್ಪು';
+    h += `<div class="pq"><div class="qn">Q${i + 1}. ${esc(item.q)}</div>`;
+    item.options.forEach((o, k) => {
+      let cls = 'po';
+      if(k === item.correct) cls += ' right';
+      if(k === a) cls += ' mine';
+      const mark = k === item.correct ? ' ✔' : (k === a ? ' ✘ (your answer)' : '');
+      h += `<div class="${cls}">${letters[k]}. ${esc(o)}${mark}</div>`;
+    });
+    h += `<div class="st">${st}</div><div class="ex"><b>Explanation · ವಿವರಣೆ:</b>\n${esc(item.explain)}</div></div>`;
+  }
+  h += `<div class="p-foot">For more mock tests and updates join: t.me/karnatakaeExamseries</div>`;
+  pa.innerHTML = h;
+}
+
+document.getElementById('pdfBtn').addEventListener('click', () => {
+  buildPrintArea();
+  const oldTitle = document.title;
+  const ch = String(currentChapter);
+  document.title = 'Karnataka-eExam-' + (ch.indexOf('9-') === 0 ? '9th-Ch' + ch.slice(2) : '8th-Ch' + ch) + '-Explanations';
+  setTimeout(() => {
+    window.print();
+    setTimeout(() => { document.title = oldTitle; }, 1500);
+  }, 50);
+});
 
 document.getElementById('restartBtn').addEventListener('click', () => {
   startQuiz();
